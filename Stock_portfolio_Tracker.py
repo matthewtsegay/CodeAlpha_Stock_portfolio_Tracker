@@ -13,7 +13,7 @@ portfolio = {}
 
 print("Enter yout stock holdings('done' to finish ):")
 while True:
-    stock = input("stock sysmbol(like 'apple'):").upper()
+    stock = input("stock sysmbol(like 'apple'):").lower()
     if stock == "done":
         break
     if stock not in stock_prices:
@@ -39,10 +39,10 @@ print(f"Total Investment: ${total_value}")
 # Save to file (optional)
 save = input("Do you want to save this to a file? (yes/no): ").lower()
 if save == "yes":
-    with open("portfolio_summary.txt", "w") as file:
+    with open("portfolio.txt", "w") as file:
         for stock, qty in portfolio.items():
             price = stock_prices[stock]
             value = qty * price
             file.write(f"{stock}: {qty} shares × ${price} = ${value}\n")
         file.write(f"Total Investment: ${total_value}\n")
-    print("Saved to portfolio_summary.txt")
+    print("Saved to portfolio.txt")
