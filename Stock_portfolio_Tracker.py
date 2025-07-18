@@ -17,7 +17,7 @@ while True:
     if stock == "done":
         break
     if stock not in stock_prices:
-        print("Stock not found. Please enter a valid stock sysmbol:")
+        print("Stock not found! Please enter a valid stock sysmbol:")
         continue
     try:
         quantity = int(input(f"How many shares of {stock}?: "))
